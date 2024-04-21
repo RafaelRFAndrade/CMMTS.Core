@@ -33,5 +33,14 @@ namespace CMMTS.Domain
                 return con.Query<T>(sql);
             }
         }
+
+        public async Task InsertAsync<T>(T entity) where T : class
+        {
+            using (var connection = new SqlConnection(GetConnection()))
+            {
+                var query = $"INSERT INTO {typeof(T).Name}s ({string.Join(", ", typeof(T).GetProperties().Select(p => p.Name))}) VALUES (@{string.Join(", @", typeof(T).GetProperties().Select(p => p.Name))})";
+                await connection.ExecuteAsync(query, entity);
+            }
+        }
     }
 }

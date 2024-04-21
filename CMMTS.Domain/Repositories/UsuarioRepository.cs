@@ -11,9 +11,10 @@ namespace CMMTS.Domain.Repositories
     {
         public UsuarioRepository(IConfiguration configuration) : base(configuration) { }
 
-        public void Add(Usuario entity)
+        public void Add(Usuario usuario)
         {
-            throw new NotImplementedException();
+            usuario.Codigo = Guid.NewGuid();
+            InsertAsync(usuario);
         }
 
         public void Delete(Usuario entity)

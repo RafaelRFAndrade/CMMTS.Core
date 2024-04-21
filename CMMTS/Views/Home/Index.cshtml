@@ -1,8 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Da uma mamada aqui nesse teu JS coco</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 mb-4">Login</h1>
+    <form method="post" action="/login">
+        <div class="form-group mb-3">
+            <label for="username">Email</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-4">Entrar</button>
+
+    </form>
+
+    @Html.ActionLink("Cadastra-se", "Cadastrar", "Home", null, new { @class = "btn btn-sucess btn-sm" })
 </div>

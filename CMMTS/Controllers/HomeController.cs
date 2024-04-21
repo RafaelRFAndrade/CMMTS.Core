@@ -1,3 +1,4 @@
+using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
 using CMMTS.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +19,25 @@ namespace CMMTS.Controllers
 
         public IActionResult Index()
         {
-            var resultado = _usuarioRepository.GetAll();
+            //var resultado = _usuarioRepository.GetAll();
             return View();
         }
 
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar2(Usuario usuario)
+        {
+            _usuarioRepository.Add(usuario);
+            return RedirectToAction("Index", "Home");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
