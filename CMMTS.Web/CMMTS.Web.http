@@ -1,0 +1,6 @@
+@CMMTS.Web_HostAddress = http://localhost:5219
+
+GET {{CMMTS.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
