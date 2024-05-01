@@ -9,7 +9,7 @@ namespace CMMTS.Web.Controllers
     {
         private readonly IUsuarioService _usuarioService;
 
-        public UsuariosController(IUsuarioService usuarioService) 
+        public UsuariosController(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
         }
@@ -22,7 +22,37 @@ namespace CMMTS.Web.Controllers
                 var usuarios = _usuarioService.BuscarUsuarios();
 
                 return Ok(usuarios);
-            } 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarUsuarios()
+        {
+            try
+            {
+                var usuarios = _usuarioService.BuscarUsuarios();
+
+                return Ok(usuarios);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost("Login")]
+        public IActionResult LogarUsuarios(string nome, string senha)
+        {
+            try
+            {
+                var login = _usuarioService.LogarUsuario(nome, senha);
+
+                return Ok(login);
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
