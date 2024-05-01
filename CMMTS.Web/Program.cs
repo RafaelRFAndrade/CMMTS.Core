@@ -16,7 +16,7 @@ builder.Services.AddSingleton<Connection>(new Connection(configuration));
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
-builder.Services.AddScoped<IUsuarioService, UsuarioService>()
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 
 var app = builder.Build();
