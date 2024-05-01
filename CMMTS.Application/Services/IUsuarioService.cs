@@ -1,4 +1,5 @@
 ﻿using CMMTS.Domain.Entities;
+using CMMTS.Domain.Messaging.Requests;
 using CMMTS.Domain.Messaging.Responses;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,6 @@ namespace CMMTS.Application.Services
     public interface IUsuarioService
     {
         IEnumerable<Usuario> BuscarUsuarios();
-        LoginResponse LogarUsuario(string nome, string senha);
+        LoginResponse LogarUsuario(UsuarioLoginRequest request);
     }
 }

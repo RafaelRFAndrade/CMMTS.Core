@@ -1,5 +1,6 @@
 ﻿using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
+using CMMTS.Domain.Messaging.Requests;
 using CMMTS.Domain.Messaging.Responses;
 using Microsoft.IdentityModel.Tokens;
 
@@ -24,16 +25,16 @@ namespace CMMTS.Application.Services
             return usuarios;
         }
 
-        public LoginResponse LogarUsuario(string nome, string senha)
+        public LoginResponse LogarUsuario(UsuarioLoginRequest request)
         {
-            ValidarLogin(nome, senha);
+            ValidarLogin(request.nome, request.senha);
 
-            var usuario = _usuarioRepository.BuscarPorNome(nome);
+            var usuario = _usuarioRepository.BuscarPorNome(request.nome);
 
             if (usuario == null)
                 throw new Exception("Usuário não existe");
 
-            if (usuario.Senha != senha)
+            if (usuario.Senha != request.senha)
                 throw new Exception("Senha inválida");
 
             return new LoginResponse
