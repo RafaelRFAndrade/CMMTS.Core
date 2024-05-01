@@ -29,6 +29,13 @@ namespace CMMTS.Domain.Repositories
             return ExecuteQueryList<Usuario>(sql);
         }
 
+        public Usuario BuscarPorNome(string nome) 
+        {
+            string sql = @$"SELECT * FROM dbo.Usuarios WHERE Nome = '{nome}'";
+
+            return ExecuteQuery<Usuario>(sql);
+        }
+
         public Usuario GetByCode(Guid code)
         {
             throw new NotImplementedException();

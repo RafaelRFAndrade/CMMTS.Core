@@ -2,7 +2,7 @@
 using CMMTS.Domain.Messaging.Requests;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CMMTS.Web.Controllers
+namespace CMMTS.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -46,7 +46,7 @@ namespace CMMTS.Web.Controllers
         }
 
         [HttpPost("Login")]
-        public IActionResult LogarUsuarios(UsuarioLoginRequest request)
+        public IActionResult LogarUsuarios([FromBody] UsuarioLoginRequest request)
         {
             try
             {

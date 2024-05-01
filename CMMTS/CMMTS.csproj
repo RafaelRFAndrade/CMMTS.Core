@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Home\Index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\Index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CMMTS.Application\CMMTS.Application.csproj" />
     <ProjectReference Include="..\CMMTS.Domain\CMMTS.Domain.csproj" />
-    <ProjectReference Include="..\CMMTS.Infra\CMMTS.Infra.csproj" />
   </ItemGroup>
 
 </Project>
