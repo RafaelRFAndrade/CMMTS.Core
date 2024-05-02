@@ -1,5 +1,6 @@
 ﻿using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
+using CMMTS.Domain.Messaging.Requests;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
@@ -29,11 +30,25 @@ namespace CMMTS.Domain.Repositories
             return ExecuteQueryList<Usuario>(sql);
         }
 
-        public Usuario BuscarPorNome(string nome) 
+        public Usuario BuscarUsuarioPorNickname(string nickname) 
         {
-            string sql = @$"SELECT * FROM dbo.Usuarios WHERE Nome = '{nome}'";
+            string sql = @$"SELECT * FROM dbo.Usuarios WHERE Nickname = '{nickname}'";
 
             return ExecuteQuery<Usuario>(sql);
+        }
+
+        public int? VerificarExistenciaUsuario(string nome, string email)
+        {
+            string sql = @$"SELECT 
+                                COUNT(*)
+                            FROM
+                                dbo.Usuarios 
+                            WHERE
+                                Nickname = '{nome}'
+                            OR
+                                Email = '{email}'";
+
+            return ExecuteQuery<int?>(sql);
         }
 
         public Usuario GetByCode(Guid code)

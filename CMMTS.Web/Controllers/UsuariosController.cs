@@ -30,14 +30,14 @@ namespace CMMTS.Web.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult CadastrarUsuarios()
+        [HttpPost("Cadastrar")]
+        public IActionResult CadastrarUsuarios(CadastrarUsuarioRequest request)
         {
             try
             {
-                var usuarios = _usuarioService.BuscarUsuarios();
+                var response = _usuarioService.CadastrarUsuario(request);
 
-                return Ok(usuarios);
+                return Ok(response);
             }
             catch (Exception ex)
             {

@@ -25,11 +25,11 @@ namespace CMMTS.Application.Services
             return usuarios;
         }
 
-        public LoginResponse LogarUsuario(UsuarioLoginRequest request)
+        public ResponseBase LogarUsuario(UsuarioLoginRequest request)
         {
-            ValidarLogin(request.nome, request.senha);
+            ValidarLogin(request.nickname, request.senha);
 
-            var usuario = _usuarioRepository.BuscarPorNome(request.nome);
+            var usuario = _usuarioRepository.BuscarUsuarioPorNickname(request.nickname);
 
             if (usuario == null)
                 throw new Exception("Usuário não existe");
@@ -37,11 +37,46 @@ namespace CMMTS.Application.Services
             if (usuario.Senha != request.senha)
                 throw new Exception("Senha inválida");
 
-            return new LoginResponse
+            return new ResponseBase
             {
                 Successo = true
             };
-        } 
+        }
+
+        public ResponseBase CadastrarUsuario(CadastrarUsuarioRequest request)
+        {
+            ValidarCadastro(request);
+
+            var usuario = new Usuario
+            {
+                Email = request.Email,
+                Nome = request.Nome,
+                Nickname = request.NickName,
+                TipoAcesso = request.TipoAcesso,
+                Senha = request.Senha,
+                Status = true
+            };
+
+            _usuarioRepository.Add(usuario);
+
+            return new ResponseBase
+            {
+                Successo = true
+            };
+        }
+
+        private void ValidarCadastro(CadastrarUsuarioRequest request)
+        {
+            if (request.Senha.IsNullOrEmpty() || request.Nome.IsNullOrEmpty() || 
+                request.TipoAcesso == null || request.NickName.IsNullOrEmpty() || 
+                request.Email.IsNullOrEmpty())
+                    throw new Exception("Valores ausentes");
+
+            var existenciaUsuario = _usuarioRepository.VerificarExistenciaUsuario(request.NickName, request.Email);
+
+            if (existenciaUsuario != null && existenciaUsuario != 0)
+                throw new Exception("Usuário já cadastrado");
+        }
 
         private void ValidarLogin(string nome, string senha)
         {
