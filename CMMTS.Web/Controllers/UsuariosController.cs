@@ -1,5 +1,5 @@
 ﻿using CMMTS.Application.Services;
-using CMMTS.Domain.Messaging.Requests;
+using CMMTS.Application.Messaging.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMMTS.Web.Controllers

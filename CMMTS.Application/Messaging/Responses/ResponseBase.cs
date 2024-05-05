@@ -1,4 +1,4 @@
-﻿namespace CMMTS.Domain.Messaging.Responses
+﻿namespace CMMTS.Application.Messaging.Responses
 {
     public class ResponseBase
     {

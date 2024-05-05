@@ -1,7 +1,7 @@
 ﻿using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
-using CMMTS.Domain.Messaging.Requests;
-using CMMTS.Domain.Messaging.Responses;
+using CMMTS.Application.Messaging.Requests;
+using CMMTS.Application.Messaging.Responses;
 using Microsoft.IdentityModel.Tokens;
 
 namespace CMMTS.Application.Services

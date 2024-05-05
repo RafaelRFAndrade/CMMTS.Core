@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CMMTS.Application\CMMTS.Application.csproj" />
+    <ProjectReference Include="..\CMMTS.Infrastructure\CMMTS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

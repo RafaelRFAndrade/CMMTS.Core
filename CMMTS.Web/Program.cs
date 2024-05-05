@@ -1,7 +1,7 @@
 using CMMTS.Application.Services;
-using CMMTS.Domain;
 using CMMTS.Domain.Interfaces;
-using CMMTS.Domain.Repositories;
+using CMMTS.Infrastructure;
+using CMMTS.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

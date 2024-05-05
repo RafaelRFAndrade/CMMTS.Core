@@ -1,4 +1,4 @@
-﻿namespace CMMTS.Domain.Messaging.Requests
+﻿namespace CMMTS.Application.Messaging.Requests
 {
     public class UsuarioLoginRequest
     {

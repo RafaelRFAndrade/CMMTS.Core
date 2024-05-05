@@ -1,12 +1,8 @@
 ﻿using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
-using CMMTS.Domain.Messaging.Requests;
-using Dapper;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 
-namespace CMMTS.Domain.Repositories
+namespace CMMTS.Infrastructure.Repositories
 {
     public class UsuarioRepository : Connection, IUsuarioRepository
     {

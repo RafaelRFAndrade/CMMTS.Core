@@ -1,5 +1,4 @@
 ﻿using CMMTS.Domain.Entities;
-using CMMTS.Domain.Messaging.Requests;
 
 namespace CMMTS.Domain.Interfaces
 {

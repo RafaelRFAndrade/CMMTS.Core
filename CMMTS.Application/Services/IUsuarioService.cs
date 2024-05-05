@@ -1,6 +1,6 @@
 ﻿using CMMTS.Domain.Entities;
-using CMMTS.Domain.Messaging.Requests;
-using CMMTS.Domain.Messaging.Responses;
+using CMMTS.Application.Messaging.Requests;
+using CMMTS.Application.Messaging.Responses;
 
 namespace CMMTS.Application.Services
 {

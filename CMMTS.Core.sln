@@ -7,10 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMMTS.Domain", "CMMTS.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMMTS.Web", "CMMTS.Web\CMMTS.Web.csproj", "{63263DCD-2136-4EA8-A27E-DDC68DC86659}"
 	ProjectSection(ProjectDependencies) = postProject
+		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217} = {1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}
 		{9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC} = {9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMMTS.Application", "CMMTS.Application\CMMTS.Application.csproj", "{9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9FB4936D-97B6-436E-9245-40DCE898BE9A} = {9FB4936D-97B6-436E-9245-40DCE898BE9A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMMTS.Infrastructure", "CMMTS.Infrastructure\CMMTS.Infrastructure.csproj", "{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9FB4936D-97B6-436E-9245-40DCE898BE9A} = {9FB4936D-97B6-436E-9245-40DCE898BE9A}
 	EndProjectSection
@@ -33,6 +39,10 @@ Global
 		{9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ED5AFA3-55A7-4918-AC1F-D9DB9EE372DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

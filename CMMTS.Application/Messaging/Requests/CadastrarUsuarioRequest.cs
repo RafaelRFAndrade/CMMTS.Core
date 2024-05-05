@@ -1,6 +1,6 @@
 ﻿using CMMTS.Domain.Enums;
 
-namespace CMMTS.Domain.Messaging.Requests
+namespace CMMTS.Application.Messaging.Requests
 {
     public class CadastrarUsuarioRequest
     {

@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
-namespace CMMTS.Domain
+namespace CMMTS.Infrastructure
 {
     public class Connection
     {
