@@ -10,7 +10,8 @@ namespace CMMTS.Infrastructure.Repositories
 
         public void Add(Usuario usuario)
         {
-            usuario.Codigo = Guid.NewGuid();
+            usuario.Codigo = Guid.NewGuid().ToString();
+            
             InsertAsync(usuario);
         }
 
@@ -21,14 +22,14 @@ namespace CMMTS.Infrastructure.Repositories
 
         public IEnumerable<Usuario> GetAll()
         {
-            string sql = "SELECT * FROM dbo.Usuarios";
+            string sql = "SELECT * FROM Usuarios";
 
             return ExecuteQueryList<Usuario>(sql);
         }
 
         public Usuario BuscarUsuarioPorNickname(string nickname) 
         {
-            string sql = @$"SELECT * FROM dbo.Usuarios WHERE Nickname = '{nickname}'";
+            string sql = @$"SELECT * FROM Usuarios WHERE Nickname = '{nickname}'";
 
             return ExecuteQuery<Usuario>(sql);
         }
@@ -38,7 +39,7 @@ namespace CMMTS.Infrastructure.Repositories
             string sql = @$"SELECT 
                                 COUNT(*)
                             FROM
-                                dbo.Usuarios 
+                                Usuarios
                             WHERE
                                 Nickname = '{nome}'
                             OR

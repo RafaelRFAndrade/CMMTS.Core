@@ -32,7 +32,7 @@ namespace CMMTS.Web.Controllers
 
         [HttpPost("Cadastrar")]
         public IActionResult CadastrarUsuarios(CadastrarUsuarioRequest request)
-        {
+         {
             try
             {
                 var response = _usuarioService.CadastrarUsuario(request);

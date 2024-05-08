@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace CMMTS.Infrastructure
 {
@@ -20,7 +20,7 @@ namespace CMMTS.Infrastructure
 
         public T ExecuteQuery<T>(string sql)
         {
-            using (var con = new SqlConnection(GetConnection()))
+            using (var con = new MySqlConnection(GetConnection()))
             {
                 return con.QueryFirstOrDefault<T>(sql);
             }
@@ -28,7 +28,7 @@ namespace CMMTS.Infrastructure
 
         public IEnumerable<T> ExecuteQueryList<T>(string sql)
         {
-            using (var con = new SqlConnection(GetConnection()))
+            using (var con = new MySqlConnection(GetConnection()))
             {
                 return con.Query<T>(sql);
             }
@@ -36,7 +36,7 @@ namespace CMMTS.Infrastructure
 
         public async Task InsertAsync<T>(T entity) where T : class
         {
-            using (var connection = new SqlConnection(GetConnection()))
+            using (var connection = new MySqlConnection(GetConnection()))
             {
                 var query = $"INSERT INTO {typeof(T).Name}s ({string.Join(", ", typeof(T).GetProperties().Select(p => p.Name))}) VALUES (@{string.Join(", @", typeof(T).GetProperties().Select(p => p.Name))})";
                 await connection.ExecuteAsync(query, entity);
