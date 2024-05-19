@@ -2,7 +2,7 @@
 
 namespace CMMTS.Domain.Interfaces
 {
-    public interface IUsuarioRepository : IRepositoryBase<Usuario>
+    public interface IUsuarioRepository
     {
         Usuario BuscarUsuarioPorNickname(string nome);
         void Add(Usuario usuario);

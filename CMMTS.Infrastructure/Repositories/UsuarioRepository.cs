@@ -12,12 +12,7 @@ namespace CMMTS.Infrastructure.Repositories
         {
             usuario.Codigo = Guid.NewGuid().ToString();
             
-            InsertAsync(usuario);
-        }
-
-        public void Delete(Usuario entity)
-        {
-            throw new NotImplementedException();
+            InsertAsync(usuario).Wait();
         }
 
         public IEnumerable<Usuario> GetAll()
@@ -46,16 +41,6 @@ namespace CMMTS.Infrastructure.Repositories
                                 Email = '{email}'";
 
             return ExecuteQuery<int?>(sql);
-        }
-
-        public Usuario GetByCode(Guid code)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Usuario entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
