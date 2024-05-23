@@ -15,7 +15,7 @@ namespace CMMTS.Application.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        public IEnumerable<Usuario> BuscarUsuarios() 
+        public IEnumerable<Usuarios> BuscarUsuarios() 
         {
             var usuarios = _usuarioRepository.GetAll();
 
@@ -47,7 +47,7 @@ namespace CMMTS.Application.Services
         {
             ValidarCadastro(request);
 
-            var usuario = new Usuario
+            var usuario = new Usuarios
             {
                 Email = request.Email,
                 Nome = request.Nome,

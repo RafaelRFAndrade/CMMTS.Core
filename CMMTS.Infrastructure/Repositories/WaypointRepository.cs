@@ -10,18 +10,18 @@ namespace CMMTS.Infrastructure.Repositories
         {
         }
 
-        public void Add(Waypoint waypoint)
+        public void Add(waypoints waypoint)
         {
             waypoint.Codigo = Guid.NewGuid().ToString();
 
             InsertAsync(waypoint).Wait();
         }
 
-        public IEnumerable<Waypoint> GetAll()
+        public IEnumerable<waypoints> GetAll()
         {
             string sql = "SELECT * FROM waypoints";
 
-            return ExecuteQueryList<Waypoint>(sql);
+            return ExecuteQueryList<waypoints>(sql);
         }
     }
 }

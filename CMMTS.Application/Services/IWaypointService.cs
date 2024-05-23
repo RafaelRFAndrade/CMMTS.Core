@@ -6,7 +6,7 @@ namespace CMMTS.Application.Services
 {
     public interface IWaypointService
     {
-        IEnumerable<Waypoint> BuscarWaypoints();
+        IEnumerable<waypoints> BuscarWaypoints();
         ResponseBase AdicionarWaypoint(CadastrarWaypointRequest cadastrarWaypoint);
     }
 }

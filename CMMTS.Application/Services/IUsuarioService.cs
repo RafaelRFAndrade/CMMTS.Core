@@ -6,7 +6,7 @@ namespace CMMTS.Application.Services
 {
     public interface IUsuarioService
     {
-        IEnumerable<Usuario> BuscarUsuarios();
+        IEnumerable<Usuarios> BuscarUsuarios();
         ResponseBase LogarUsuario(UsuarioLoginRequest request);
         ResponseBase CadastrarUsuario(CadastrarUsuarioRequest request);
     }

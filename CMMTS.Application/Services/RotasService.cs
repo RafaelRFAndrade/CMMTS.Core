@@ -14,7 +14,7 @@ namespace CMMTS.Application.Services
             _rotasRepository = rotasRepository;
         }
 
-        public IEnumerable<Rotas> BuscarRotas()
+        public IEnumerable<routes> BuscarRotas()
         {
             var rotas = _rotasRepository.GetAll();
 
@@ -28,7 +28,7 @@ namespace CMMTS.Application.Services
         {
             //ValidarRota(cadastrarRota)
 
-            var rota = new Rotas
+            var rota = new routes
             {
                 CodigoCentroDistribuicao = cadastrarRota.CodigoCentroDistribuicao,
                 WaypointsJson = cadastrarRota.WaypointsJson,

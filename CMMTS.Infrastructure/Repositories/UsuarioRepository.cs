@@ -8,25 +8,25 @@ namespace CMMTS.Infrastructure.Repositories
     {
         public UsuarioRepository(IConfiguration configuration) : base(configuration) { }
 
-        public void Add(Usuario usuario)
+        public void Add(Usuarios usuario)
         {
             usuario.Codigo = Guid.NewGuid().ToString();
             
             InsertAsync(usuario).Wait();
         }
 
-        public IEnumerable<Usuario> GetAll()
+        public IEnumerable<Usuarios> GetAll()
         {
             string sql = "SELECT * FROM Usuarios";
 
-            return ExecuteQueryList<Usuario>(sql);
+            return ExecuteQueryList<Usuarios>(sql);
         }
 
-        public Usuario BuscarUsuarioPorNickname(string nickname) 
+        public Usuarios BuscarUsuarioPorNickname(string nickname) 
         {
             string sql = @$"SELECT * FROM Usuarios WHERE Nickname = '{nickname}'";
 
-            return ExecuteQuery<Usuario>(sql);
+            return ExecuteQuery<Usuarios>(sql);
         }
 
         public int? VerificarExistenciaUsuario(string nome, string email)

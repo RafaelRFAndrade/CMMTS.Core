@@ -10,18 +10,18 @@ namespace CMMTS.Infrastructure.Repositories
         {
         }
 
-        public void Add(Rotas rota)
+        public void Add(routes rota)
         {
             rota.Codigo = Guid.NewGuid().ToString();
 
             InsertAsync(rota).Wait();
         }
 
-        public IEnumerable<Rotas> GetAll()
+        public IEnumerable<routes> GetAll()
         {
             string sql = "SELECT * FROM routes";
 
-            return ExecuteQueryList<Rotas>(sql);
+            return ExecuteQueryList<routes>(sql);
         }
     }
 }

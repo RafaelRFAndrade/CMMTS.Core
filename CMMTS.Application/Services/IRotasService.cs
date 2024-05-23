@@ -6,7 +6,7 @@ namespace CMMTS.Application.Services
 {
     public interface IRotasService
     {
-        IEnumerable<Rotas> BuscarRotas();
+        IEnumerable<routes> BuscarRotas();
         ResponseBase AdicionarRota(CadastrarRotaRequest cadastrarRota);
     }
 }

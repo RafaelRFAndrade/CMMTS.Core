@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CMMTS.Domain.Entities
 {
     [Table("waypoints")]
-    public class Waypoint
+    public class waypoints
     {
         [Key]
         public string Codigo { get; set; }

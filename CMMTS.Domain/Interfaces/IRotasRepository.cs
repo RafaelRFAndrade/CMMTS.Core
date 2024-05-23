@@ -4,7 +4,7 @@ namespace CMMTS.Domain.Interfaces
 {
     public interface IRotasRepository
     {
-        void Add(Rotas rota);
-        IEnumerable<Rotas> GetAll();
+        void Add(routes rota);
+        IEnumerable<routes> GetAll();
     }
 }

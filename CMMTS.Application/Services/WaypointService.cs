@@ -14,7 +14,7 @@ namespace CMMTS.Application.Services
             _waypointRepository = waypointRepository;
         }
 
-        public IEnumerable<Waypoint> BuscarWaypoints()
+        public IEnumerable<waypoints> BuscarWaypoints()
         {
             var waypoints = _waypointRepository.GetAll();
 
@@ -27,7 +27,7 @@ namespace CMMTS.Application.Services
         public ResponseBase AdicionarWaypoint(CadastrarWaypointRequest cadastrarWaypoint)
         {
             //ValidarWaypoint(cadastrarWaypoint)
-            var waypoint = new Waypoint
+            var waypoint = new waypoints
             {
                 Nome = cadastrarWaypoint.Nome,
                 Numero = cadastrarWaypoint.Numero,

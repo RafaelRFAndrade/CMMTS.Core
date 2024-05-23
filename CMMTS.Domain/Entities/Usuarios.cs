@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CMMTS.Domain.Entities
 {
     [Table("Usuarios")]
-    public class Usuario 
+    public class Usuarios
     {
         [Key]
         public string Codigo { get; set; }

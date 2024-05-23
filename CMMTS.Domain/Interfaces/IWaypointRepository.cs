@@ -4,7 +4,7 @@ namespace CMMTS.Domain.Interfaces
 {
     public interface IWaypointRepository
     {
-        void Add(Waypoint waypoint);
-        IEnumerable<Waypoint> GetAll();
+        void Add(waypoints waypoint);
+        IEnumerable<waypoints> GetAll();
     }
 }
