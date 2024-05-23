@@ -14,7 +14,7 @@ namespace CMMTS.Application.Services
             _centroDistribuicaoRepository = centroDistribuicaoRepository;
         }
 
-        public IEnumerable<CentroDistribuicao> BuscarCentros()
+        public IEnumerable<distribution_centers> BuscarCentros()
         {
             var centros = _centroDistribuicaoRepository.GetAll();
 
@@ -27,7 +27,7 @@ namespace CMMTS.Application.Services
         public ResponseBase AdicionarCentro(CadastrarCentroRequest centroDistribuicao)
         {
             //validarCentro(centroDistribuicao); Ainda deverá ser pensado
-            var centro = new CentroDistribuicao
+            var centro = new distribution_centers
             {
                 Nome = centroDistribuicao.Nome,
                 Numero = centroDistribuicao.Numero,

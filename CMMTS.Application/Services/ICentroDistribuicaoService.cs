@@ -6,7 +6,7 @@ namespace CMMTS.Application.Services
 {
     public interface ICentroDistribuicaoService
     {
-        IEnumerable<CentroDistribuicao> BuscarCentros();
+        IEnumerable<distribution_centers> BuscarCentros();
         ResponseBase AdicionarCentro(CadastrarCentroRequest centroDistribuicao);
     }
 }

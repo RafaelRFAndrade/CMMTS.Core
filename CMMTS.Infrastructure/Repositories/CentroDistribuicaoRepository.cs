@@ -10,18 +10,18 @@ namespace CMMTS.Infrastructure.Repositories
         {
         }
 
-        public void Add(CentroDistribuicao centroDistribuicao)
+        public void Add(distribution_centers centroDistribuicao)
         {
             centroDistribuicao.Codigo = Guid.NewGuid().ToString();
 
             InsertAsync(centroDistribuicao).Wait();
         }
 
-        public IEnumerable<CentroDistribuicao> GetAll()
+        public IEnumerable<distribution_centers> GetAll()
         {
             string sql = "SELECT * FROM distribution_centers";
 
-            return ExecuteQueryList<CentroDistribuicao>(sql);
+            return ExecuteQueryList<distribution_centers>(sql);
         }
     }
 }

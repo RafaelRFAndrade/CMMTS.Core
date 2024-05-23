@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CMMTS.Domain.Entities
 {
     [Table("distribution_centers")]
-    public class CentroDistribuicao
+    public class distribution_centers
     {
         [Key]
         public string Codigo { get; set; }

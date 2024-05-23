@@ -18,7 +18,7 @@ namespace CMMTS.Application.Services
         {
             var rotas = _rotasRepository.GetAll();
 
-            if (rotas == null)
+            if (rotas == null || rotas.Count() < 1)
                 throw new Exception("Não há rotas cadastradas");
 
             return rotas;

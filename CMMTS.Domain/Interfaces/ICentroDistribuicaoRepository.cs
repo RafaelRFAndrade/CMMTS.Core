@@ -4,7 +4,7 @@ namespace CMMTS.Domain.Interfaces
 {
     public interface ICentroDistribuicaoRepository
     {
-        IEnumerable<CentroDistribuicao> GetAll();
-        void Add(CentroDistribuicao centroDistribuicao);
+        IEnumerable<distribution_centers> GetAll();
+        void Add(distribution_centers centroDistribuicao);
     }
 }
