@@ -16,12 +16,7 @@ namespace CMMTS.Application.Services
 
         public IEnumerable<routes> BuscarRotas()
         {
-            var rotas = _rotasRepository.GetAll();
-
-            if (rotas == null || rotas.Count() < 1)
-                throw new Exception("Não há rotas cadastradas");
-
-            return rotas;
+            return _rotasRepository.GetAll();
         }
 
         public ResponseBase AdicionarRota(CadastrarRotaRequest cadastrarRota)
@@ -30,8 +25,8 @@ namespace CMMTS.Application.Services
 
             var rota = new routes
             {
-                CodigoCentroDistribuicao = cadastrarRota.CodigoCentroDistribuicao,
-                WaypointsJson = cadastrarRota.WaypointsJson,
+                PlaceIdDestino = cadastrarRota.PlaceIdDestino,
+                PlaceIdOrigem = cadastrarRota.PlaceIdOrigem,
                 TipoRota = cadastrarRota.TipoRota
             };
 

@@ -16,12 +16,7 @@ namespace CMMTS.Application.Services
 
         public IEnumerable<distribution_centers> BuscarCentros()
         {
-            var centros = _centroDistribuicaoRepository.GetAll();
-
-            if (centros == null)
-                throw new Exception("Não há centros cadastrados");
-
-            return centros;
+            return _centroDistribuicaoRepository.GetAll();
         }
 
         public ResponseBase AdicionarCentro(CadastrarCentroRequest centroDistribuicao)
@@ -31,8 +26,7 @@ namespace CMMTS.Application.Services
             {
                 Nome = centroDistribuicao.Nome,
                 Numero = centroDistribuicao.Numero,
-                Longitude = centroDistribuicao.Longitude,
-                Latitude = centroDistribuicao.Latitude
+                PlaceIdCentro = centroDistribuicao.PlaceIdCentro,
             };
 
             _centroDistribuicaoRepository.Add(centro);

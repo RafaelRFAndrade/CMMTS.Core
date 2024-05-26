@@ -16,12 +16,7 @@ namespace CMMTS.Application.Services
 
         public IEnumerable<waypoints> BuscarWaypoints()
         {
-            var waypoints = _waypointRepository.GetAll();
-
-            if (waypoints == null)
-                throw new Exception("Não há waypoints cadastrados");
-
-            return waypoints;
+            return _waypointRepository.GetAll();
         }
 
         public ResponseBase AdicionarWaypoint(CadastrarWaypointRequest cadastrarWaypoint)
@@ -29,10 +24,10 @@ namespace CMMTS.Application.Services
             //ValidarWaypoint(cadastrarWaypoint)
             var waypoint = new waypoints
             {
+                CodigoRota = cadastrarWaypoint.CodigoRota,
                 Nome = cadastrarWaypoint.Nome,
                 Numero = cadastrarWaypoint.Numero,
-                Latitude = cadastrarWaypoint.Latitude,
-                Longitude = cadastrarWaypoint.Longitude
+                PlaceIdWaypoint = cadastrarWaypoint.PlaceIdWaypoint
             };
 
             _waypointRepository.Add(waypoint);

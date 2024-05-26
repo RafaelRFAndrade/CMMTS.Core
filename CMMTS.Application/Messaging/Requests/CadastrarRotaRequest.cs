@@ -4,8 +4,8 @@ namespace CMMTS.Application.Messaging.Requests
 {
     public class CadastrarRotaRequest
     {
-        public string CodigoCentroDistribuicao { get; set; }
-        public string WaypointsJson { get; set; }
+        public string PlaceIdOrigem { get; set; }
+        public string PlaceIdDestino { get; set; }
         public TipoRota TipoRota { get; set; }
     }
 }
