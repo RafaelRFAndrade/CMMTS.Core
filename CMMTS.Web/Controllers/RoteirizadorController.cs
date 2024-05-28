@@ -82,6 +82,21 @@ namespace CMMTS.Web.Controllers
             }
         }
 
+        [HttpPost("RoteirizarWaypoint")]
+        public IActionResult RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota)
+        {
+            try
+            {
+                var response = _waypointService.RoteirizarWaypoints(waypoints, codigoRota);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         [HttpGet("BuscarRotas")]
         public IActionResult BuscarRotas()
         {

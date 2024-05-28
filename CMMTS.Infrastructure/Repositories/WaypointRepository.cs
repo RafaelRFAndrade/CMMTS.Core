@@ -23,5 +23,19 @@ namespace CMMTS.Infrastructure.Repositories
 
             return ExecuteQueryList<waypoints>(sql);
         }
+
+        public void BulkUpdate(List<waypoints> waypoints, string codigoRota)
+        {
+            string codigosConcatenados = string.Join("', '", waypoints.Select(w => w.Codigo).ToList());
+
+            string sql = @$"UPDATE 
+                               waypoints 
+                             SET 
+                               CodigoRota = {codigoRota}
+                            WHERE 
+                                Codigo IN ('{codigosConcatenados}')";
+
+            ExecuteQueryAsync(sql);
+        }
     }
 }
