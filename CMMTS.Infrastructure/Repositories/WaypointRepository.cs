@@ -31,11 +31,11 @@ namespace CMMTS.Infrastructure.Repositories
             string sql = @$"UPDATE 
                                waypoints 
                              SET 
-                               CodigoRota = {codigoRota}
+                               CodigoRota = '{codigoRota}'
                             WHERE 
                                 Codigo IN ('{codigosConcatenados}')";
 
-            ExecuteQueryAsync(sql);
+            ExecuteQueryAsync(sql).Wait();
         }
     }
 }

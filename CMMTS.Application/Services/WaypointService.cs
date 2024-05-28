@@ -37,12 +37,7 @@ namespace CMMTS.Application.Services
 
         public ResponseBase RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota)
         {
-            foreach(waypoint waypoint in waypoints) 
-            {
-                waypoint.CodigoRota = codigoRota;
-            }
-
-            _waypointRepository.BulkUpdate(waypoints);
+            _waypointRepository.BulkUpdate(waypoints, codigoRota);
 
             return new ResponseBase { Successo = true };    
         }

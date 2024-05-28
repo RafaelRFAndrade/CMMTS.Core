@@ -45,7 +45,7 @@ namespace CMMTS.Infrastructure
 
         public async Task ExecuteQueryAsync(string sql)
         {
-            using (var connection = new MySqlConnection(GetConnectionString()))
+            using (var connection = new MySqlConnection(GetConnection()))
             {
                 await connection.ExecuteAsync(sql);
             }

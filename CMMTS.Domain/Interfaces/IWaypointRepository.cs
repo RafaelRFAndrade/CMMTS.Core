@@ -6,5 +6,6 @@ namespace CMMTS.Domain.Interfaces
     {
         void Add(waypoints waypoint);
         IEnumerable<waypoints> GetAll();
+        void BulkUpdate(List<waypoints> waypoints, string codigoRota);
     }
 }
