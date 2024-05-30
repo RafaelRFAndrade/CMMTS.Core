@@ -1,5 +1,6 @@
 ﻿using CMMTS.Application.Messaging.Requests;
 using CMMTS.Application.Services;
+using CMMTS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMMTS.Web.Controllers
@@ -73,6 +74,21 @@ namespace CMMTS.Web.Controllers
             try
             {
                 var response = _waypointService.AdicionarWaypoint(cadastrarWaypoint);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost("RoteirizarWaypoint")]
+        public IActionResult RoteirizarWaypoints(RoteirizarWaypointsRequest roteirizarWaypoints)
+        {
+            try
+            {
+                var response = _waypointService.RoteirizarWaypoints(roteirizarWaypoints.Waypoints, roteirizarWaypoints.CodigoRota);
 
                 return Ok(response);
             }

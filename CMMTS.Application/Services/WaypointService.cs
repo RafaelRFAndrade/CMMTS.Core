@@ -35,5 +35,12 @@ namespace CMMTS.Application.Services
 
             return new ResponseBase { Successo = true };
         }
+
+        public ResponseBase RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota)
+        {
+            _waypointRepository.BulkUpdate(waypoints, codigoRota);
+
+            return new ResponseBase { Successo = true };    
+        }
     }
 }
