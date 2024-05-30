@@ -6,7 +6,7 @@ namespace CMMTS.Application.Messaging.Requests
     {
         public string PlaceIdOrigem { get; set; }
         public string PlaceIdDestino { get; set; }
-        public TipoRota TipoRota { get; set; }
+        public string TipoRota { get; set; }
         public DateTime DataRota { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace CMMTS.Domain.Entities
         public string Codigo { get; set; }
         public string PlaceIdOrigem { get; set; }
         public string PlaceIdDestino { get; set; }
-        public TipoRota TipoRota { get; set; }
+        public string TipoRota { get; set; }
         public DateTime Data {  get; set; }
     }
 }
