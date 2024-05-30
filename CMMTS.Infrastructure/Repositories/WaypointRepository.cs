@@ -22,9 +22,9 @@ namespace CMMTS.Infrastructure.Repositories
             return ExecuteQueryList<waypoints>(sql);
         }
 
-        public void BulkUpdate(List<waypoints> waypoints, string codigoRota)
+        public void AtualizarCodigoRota(List<string> waypoints, string codigoRota)
         {
-            string codigosConcatenados = string.Join("', '", waypoints.Select(w => w.Codigo).ToList());
+            string codigosConcatenados = string.Join("', '", waypoints.Select(w => w).ToList());
 
             string sql = @$"UPDATE 
                                waypoints 

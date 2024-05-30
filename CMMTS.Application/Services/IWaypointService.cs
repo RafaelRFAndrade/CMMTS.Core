@@ -8,6 +8,6 @@ namespace CMMTS.Application.Services
     {
         IEnumerable<waypoints> BuscarWaypoints();
         ResponseBase AdicionarWaypoint(CadastrarWaypointRequest cadastrarWaypoint);
-        ResponseBase RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota);
+        ResponseBase RoteirizarWaypoints(List<string> codigoWaypoint, string codigoRota);
     }
 }

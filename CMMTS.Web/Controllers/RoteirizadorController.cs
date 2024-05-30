@@ -88,7 +88,7 @@ namespace CMMTS.Web.Controllers
         {
             try
             {
-                var response = _waypointService.RoteirizarWaypoints(roteirizarWaypoints.Waypoints, roteirizarWaypoints.CodigoRota);
+                var response = _waypointService.RoteirizarWaypoints(roteirizarWaypoints.CodigoWaypoint, roteirizarWaypoints.CodigoRota);
 
                 return Ok(response);
             }

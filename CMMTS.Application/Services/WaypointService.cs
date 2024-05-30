@@ -36,9 +36,9 @@ namespace CMMTS.Application.Services
             return new CodResponse { Successo = true , Codigo = waypoint.Codigo};
         }
 
-        public ResponseBase RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota)
+        public ResponseBase RoteirizarWaypoints(List<string> codigoWaypoint, string codigoRota)
         {
-            _waypointRepository.BulkUpdate(waypoints, codigoRota);
+            _waypointRepository.AtualizarCodigoRota(codigoWaypoint, codigoRota);
 
             return new ResponseBase { Successo = true };    
         }
