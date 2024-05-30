@@ -20,7 +20,7 @@ namespace CMMTS.Application.Services
             return _rotasRepository.GetAll(data);
         }
 
-        public RotasResponse AdicionarRota(CadastrarRotaRequest cadastrarRota)
+        public CodResponse AdicionarRota(CadastrarRotaRequest cadastrarRota)
         {
             //ValidarRota(cadastrarRota)
 
@@ -35,7 +35,7 @@ namespace CMMTS.Application.Services
 
             _rotasRepository.Add(rota);
 
-            return new RotasResponse { Successo = true, Codigo = rota.Codigo };
+            return new CodResponse { Successo = true, Codigo = rota.Codigo };
         }
     }
 }

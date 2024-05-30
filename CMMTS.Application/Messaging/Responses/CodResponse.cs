@@ -1,6 +1,6 @@
 ﻿namespace CMMTS.Application.Messaging.Responses
 {
-    public class RotasResponse : ResponseBase
+    public class CodResponse : ResponseBase
     {
         public string Codigo { get; set; }
     }

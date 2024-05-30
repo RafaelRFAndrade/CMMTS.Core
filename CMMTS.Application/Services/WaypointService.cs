@@ -33,7 +33,7 @@ namespace CMMTS.Application.Services
 
             _waypointRepository.Add(waypoint);
 
-            return new ResponseBase { Successo = true };
+            return new CodResponse { Successo = true , Codigo = waypoint.Codigo};
         }
 
         public ResponseBase RoteirizarWaypoints(List<waypoints> waypoints, string codigoRota)
