@@ -9,9 +9,7 @@ namespace CMMTS.Infrastructure.Repositories
         public UsuarioRepository(IConfiguration configuration) : base(configuration) { }
 
         public void Add(Usuarios usuario)
-        {
-            usuario.Codigo = Guid.NewGuid().ToString();
-            
+        {            
             InsertAsync(usuario).Wait();
         }
 

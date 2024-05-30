@@ -12,8 +12,6 @@ namespace CMMTS.Infrastructure.Repositories
 
         public void Add(waypoints waypoint)
         {
-            waypoint.Codigo = Guid.NewGuid().ToString();
-
             InsertAsync(waypoint).Wait();
         }
 

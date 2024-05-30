@@ -19,12 +19,13 @@ namespace CMMTS.Application.Services
             return _rotasRepository.GetAll();
         }
 
-        public ResponseBase AdicionarRota(CadastrarRotaRequest cadastrarRota)
+        public RotasResponse AdicionarRota(CadastrarRotaRequest cadastrarRota)
         {
             //ValidarRota(cadastrarRota)
 
             var rota = new routes
             {
+                Codigo = Guid.NewGuid().ToString(),
                 PlaceIdDestino = cadastrarRota.PlaceIdDestino,
                 PlaceIdOrigem = cadastrarRota.PlaceIdOrigem,
                 TipoRota = cadastrarRota.TipoRota
@@ -32,7 +33,7 @@ namespace CMMTS.Application.Services
 
             _rotasRepository.Add(rota);
 
-            return new ResponseBase { Successo = true };
+            return new RotasResponse { Successo = true, Codigo = rota.Codigo };
         }
     }
 }

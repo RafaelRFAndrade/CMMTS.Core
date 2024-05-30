@@ -24,6 +24,7 @@ namespace CMMTS.Application.Services
             //validarCentro(centroDistribuicao); Ainda deverá ser pensado
             var centro = new distribution_centers
             {
+                Codigo = Guid.NewGuid().ToString(),
                 Nome = centroDistribuicao.Nome,
                 Numero = centroDistribuicao.Numero,
                 PlaceIdCentro = centroDistribuicao.PlaceIdCentro,

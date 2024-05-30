@@ -12,8 +12,6 @@ namespace CMMTS.Infrastructure.Repositories
 
         public void Add(distribution_centers centroDistribuicao)
         {
-            centroDistribuicao.Codigo = Guid.NewGuid().ToString();
-
             InsertAsync(centroDistribuicao).Wait();
         }
 

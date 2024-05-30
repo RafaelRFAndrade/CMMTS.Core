@@ -49,6 +49,7 @@ namespace CMMTS.Application.Services
 
             var usuario = new Usuarios
             {
+                Codigo = Guid.NewGuid().ToString(),
                 Email = request.Email,
                 Nome = request.Nome,
                 Nickname = request.NickName,

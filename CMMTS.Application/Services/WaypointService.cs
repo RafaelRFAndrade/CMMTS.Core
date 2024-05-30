@@ -24,6 +24,7 @@ namespace CMMTS.Application.Services
             //ValidarWaypoint(cadastrarWaypoint)
             var waypoint = new waypoints
             {
+                Codigo = Guid.NewGuid().ToString(),
                 CodigoRota = cadastrarWaypoint.CodigoRota,
                 Nome = cadastrarWaypoint.Nome,
                 Numero = cadastrarWaypoint.Numero,

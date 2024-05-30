@@ -12,8 +12,6 @@ namespace CMMTS.Infrastructure.Repositories
 
         public void Add(routes rota)
         {
-            rota.Codigo = Guid.NewGuid().ToString();
-
             InsertAsync(rota).Wait();
         }
 
