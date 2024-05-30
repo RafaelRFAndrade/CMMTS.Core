@@ -1,12 +1,14 @@
 ﻿using CMMTS.Application.Messaging.Requests;
 using CMMTS.Application.Services;
 using CMMTS.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMMTS.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class RoteirizadorController : ControllerBase
     {
         private readonly ICentroDistribuicaoService _centroDistribuicaoService;
