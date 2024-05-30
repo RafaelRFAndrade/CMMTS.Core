@@ -2,6 +2,7 @@
 using CMMTS.Application.Messaging.Responses;
 using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
+using System.Data;
 
 namespace CMMTS.Application.Services
 {
@@ -14,9 +15,9 @@ namespace CMMTS.Application.Services
             _rotasRepository = rotasRepository;
         }
 
-        public IEnumerable<routes> BuscarRotas()
+        public IEnumerable<routes> BuscarRotas(DateTime? data)
         {
-            return _rotasRepository.GetAll();
+            return _rotasRepository.GetAll(data);
         }
 
         public RotasResponse AdicionarRota(CadastrarRotaRequest cadastrarRota)
@@ -28,7 +29,8 @@ namespace CMMTS.Application.Services
                 Codigo = Guid.NewGuid().ToString(),
                 PlaceIdDestino = cadastrarRota.PlaceIdDestino,
                 PlaceIdOrigem = cadastrarRota.PlaceIdOrigem,
-                TipoRota = cadastrarRota.TipoRota
+                TipoRota = cadastrarRota.TipoRota,
+                Data = cadastrarRota.DataRota
             };
 
             _rotasRepository.Add(rota);

@@ -15,9 +15,15 @@ namespace CMMTS.Infrastructure.Repositories
             InsertAsync(rota).Wait();
         }
 
-        public IEnumerable<routes> GetAll()
+        public IEnumerable<routes> GetAll(DateTime? data)
         {
-            string sql = "SELECT * FROM routes";
+             string sql = "SELECT * FROM routes";
+
+            if(data != null && data != DateTime.MinValue)
+            {
+                string dataFormatada = data.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                sql += @$" WHERE Data = '{dataFormatada}'";
+            }
 
             return ExecuteQueryList<routes>(sql);
         }

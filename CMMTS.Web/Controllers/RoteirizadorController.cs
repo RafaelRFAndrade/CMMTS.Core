@@ -99,11 +99,11 @@ namespace CMMTS.Web.Controllers
         }
 
         [HttpGet("BuscarRotas")]
-        public IActionResult BuscarRotas()
+        public IActionResult BuscarRotas(DateTime? data)
         {
             try
             {
-                var response = _rotasService.BuscarRotas();
+                var response = _rotasService.BuscarRotas(data);
 
                 return Ok(response);
             }

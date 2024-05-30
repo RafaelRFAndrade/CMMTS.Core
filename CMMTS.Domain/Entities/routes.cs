@@ -12,5 +12,6 @@ namespace CMMTS.Domain.Entities
         public string PlaceIdOrigem { get; set; }
         public string PlaceIdDestino { get; set; }
         public TipoRota TipoRota { get; set; }
+        public DateTime Data {  get; set; }
     }
 }
