@@ -22,7 +22,7 @@ Antes de começar, certifique-se de ter instalado:
 Clone o repositório da API para o seu ambiente local:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/RafaelRFAndrade/CMMTS.Core
 ```
 ### Passo 2: Abrir o Projeto no Visual Studio
 
