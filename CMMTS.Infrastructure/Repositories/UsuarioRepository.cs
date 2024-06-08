@@ -1,6 +1,7 @@
 ﻿using CMMTS.Domain.Entities;
 using CMMTS.Domain.Interfaces;
 using Microsoft.Extensions.Configuration;
+using System.Reflection.Metadata;
 
 namespace CMMTS.Infrastructure.Repositories
 {
@@ -22,9 +23,9 @@ namespace CMMTS.Infrastructure.Repositories
 
         public Usuarios BuscarUsuarioPorNickname(string nickname) 
         {
-            string sql = @$"SELECT * FROM Usuarios WHERE Nickname = '{nickname}'";
+            string sql = @$"SELECT * FROM Usuarios WHERE Nickname = @Nickname";
 
-            return ExecuteQuery<Usuarios>(sql);
+            return ExecuteQueryParametrizada<Usuarios>(sql, new { Nickname = nickname});
         }
 
         public int? VerificarExistenciaUsuario(string nome, string email)

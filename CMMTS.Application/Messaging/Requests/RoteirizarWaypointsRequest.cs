@@ -6,6 +6,5 @@ namespace CMMTS.Application.Messaging.Requests
     {
         public string CodigoRota { get; set; }
         public List<string> CodigoWaypoint { get; set; }
-
     }
 }

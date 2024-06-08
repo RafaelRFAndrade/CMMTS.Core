@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CMMTS.Application\CMMTS.Application.csproj" />
     <ProjectReference Include="..\CMMTS.Domain\CMMTS.Domain.csproj" />
   </ItemGroup>
 

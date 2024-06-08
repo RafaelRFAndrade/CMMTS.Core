@@ -35,5 +35,12 @@ namespace CMMTS.Infrastructure.Repositories
 
             ExecuteQueryAsync(sql).Wait();
         }
+
+        public void FinalizarEntrega(string codigoWaypoint)
+        {
+            string sql = @$"DELETE FROM waypoints WHERE Codigo = '{codigoWaypoint}'";
+
+            ExecuteQueryAsync(sql).Wait();
+        }
     }
 }

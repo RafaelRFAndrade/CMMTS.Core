@@ -1,6 +1,7 @@
 ﻿using CMMTS.Application.Messaging.Requests;
 using CMMTS.Application.Services;
 using CMMTS.Domain.Entities;
+using CMMTS.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMMTS.Web.Controllers
@@ -97,7 +98,22 @@ namespace CMMTS.Web.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        
+        [HttpPost("FinalizarEntrega")]
+        public IActionResult FinalizarEntrega(string codigoWaypoint)
+        {
+            try
+            {
+                var response = _waypointService.FinalizarEntrega(codigoWaypoint);
 
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
         [HttpGet("BuscarRotas")]
         public IActionResult BuscarRotas(DateTime? data)
         {
@@ -119,6 +135,21 @@ namespace CMMTS.Web.Controllers
             try
             {
                 var response = _rotasService.AdicionarRota(cadastrarRota);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpGet("Dashboard")]
+        public IActionResult Dashboard()
+        {
+            try
+            {
+                var response = _waypointService.ObterDashboard();
 
                 return Ok(response);
             }

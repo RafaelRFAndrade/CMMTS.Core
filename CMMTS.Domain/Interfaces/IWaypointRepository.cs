@@ -1,4 +1,5 @@
 ﻿using CMMTS.Domain.Entities;
+using CMMTS.Domain.RawQueries;
 
 namespace CMMTS.Domain.Interfaces
 {
@@ -7,5 +8,6 @@ namespace CMMTS.Domain.Interfaces
         void Add(waypoints waypoint);
         IEnumerable<waypoints> GetAll();
         void AtualizarCodigoRota(List<string> codigoWaypoint, string codigoRota);
+        void FinalizarEntrega(string codigoWaypoint);
     }
 }
