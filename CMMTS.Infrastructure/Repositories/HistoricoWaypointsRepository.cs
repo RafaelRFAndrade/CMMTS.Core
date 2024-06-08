@@ -39,7 +39,8 @@ namespace CMMTS.Infrastructure.Repositories
                 SELECT 
                     SUM(CASE WHEN Situacao = {(int)SituacaoEntrega.Iniciada} THEN 1 ELSE 0 END) as 'NaoEntregues',
                     SUM(CASE WHEN Situacao = {(int)SituacaoEntrega.EmAndamento} THEN 1 ELSE 0 END) as 'EmAndamento',
-                    SUM(CASE WHEN Situacao = {(int)SituacaoEntrega.Finalizada} THEN 1 ELSE 0 END) as 'Entregues'
+                    SUM(CASE WHEN Situacao = {(int)SituacaoEntrega.Finalizada} THEN 1 ELSE 0 END) as 'Entregues',
+                    SUM(CASE WHEN Situacao = 3 AND CAST(DtSituacao AS DATE) = CAST('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' AS DATE) THEN 1 ELSE 0 END) as 'EntreguesHoje'
                 FROM HistoricoWaypoints";
 
             return ExecuteQuery<DashboardRawQuery>(sql);

@@ -77,7 +77,8 @@ namespace CMMTS.Application.Services
                 Successo = true,
                 EmAndamento = contadores.EmAndamento,
                 Entregues = contadores.Entregues,
-                NaoEntregues = contadores.NaoEntregues
+                NaoEntregues = contadores.NaoEntregues,
+                EntreguesHoje = contadores.EntreguesHoje
             };
         }
     }
