@@ -8,5 +8,6 @@ namespace CMMTS.Domain.Interfaces
         void Add(Usuarios usuario);
         IEnumerable<Usuarios> GetAll();
         int? VerificarExistenciaUsuario(string nome, string email);
+        void DeletarUsuarioPorNickname(string nickname);
     }
 }

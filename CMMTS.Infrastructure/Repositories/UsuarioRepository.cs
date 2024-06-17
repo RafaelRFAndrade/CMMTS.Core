@@ -28,6 +28,13 @@ namespace CMMTS.Infrastructure.Repositories
             return ExecuteQueryParametrizada<Usuarios>(sql, new { Nickname = nickname});
         }
 
+        public void DeletarUsuarioPorNickname(string nickname)
+        {
+            string sql = @$"DELETE FROM Usuarios WHERE Nickname = @Nickname";
+
+             ExecuteQueryParametrizada<Usuarios>(sql, new { Nickname = nickname });
+        }
+
         public int? VerificarExistenciaUsuario(string nome, string email)
         {
             string sql = @$"SELECT 

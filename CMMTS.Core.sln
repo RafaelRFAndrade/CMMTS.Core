@@ -16,10 +16,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMMTS.Application", "CMMTS.
 		{9FB4936D-97B6-436E-9245-40DCE898BE9A} = {9FB4936D-97B6-436E-9245-40DCE898BE9A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMMTS.Infrastructure", "CMMTS.Infrastructure\CMMTS.Infrastructure.csproj", "{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMMTS.Infrastructure", "CMMTS.Infrastructure\CMMTS.Infrastructure.csproj", "{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9FB4936D-97B6-436E-9245-40DCE898BE9A} = {9FB4936D-97B6-436E-9245-40DCE898BE9A}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMMTS.Infrastructure.Tests", "CMMTS.Infrastructure.Tests\CMMTS.Infrastructure.Tests.csproj", "{88EC59E6-2F8C-43F3-B4F3-18233235CB05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B207EB3-4B7A-4EC5-8CAC-AF886BF55217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88EC59E6-2F8C-43F3-B4F3-18233235CB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EC59E6-2F8C-43F3-B4F3-18233235CB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EC59E6-2F8C-43F3-B4F3-18233235CB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EC59E6-2F8C-43F3-B4F3-18233235CB05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
