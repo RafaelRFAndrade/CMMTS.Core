@@ -9,5 +9,6 @@ namespace CMMTS.Domain.Interfaces
         IEnumerable<waypoints> GetAll();
         void AtualizarCodigoRota(List<string> codigoWaypoint, string codigoRota);
         void FinalizarEntrega(string codigoWaypoint);
+        void LimparRotaWaypoints(string codigoRota);
     }
 }

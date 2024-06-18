@@ -1,7 +1,5 @@
 ﻿using CMMTS.Application.Messaging.Requests;
 using CMMTS.Application.Services;
-using CMMTS.Domain.Entities;
-using CMMTS.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMMTS.Web.Controllers
@@ -113,7 +111,22 @@ namespace CMMTS.Web.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        
+
+        [HttpDelete("DeletarRota")]
+        public IActionResult DeletarRota(string codigoRota)
+        {
+            try
+            {
+                var response = _rotasService.DeletarRota(codigoRota);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         [HttpGet("BuscarRotas")]
         public IActionResult BuscarRotas(DateTime? data)
         {

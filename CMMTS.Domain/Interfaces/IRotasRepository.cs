@@ -6,5 +6,6 @@ namespace CMMTS.Domain.Interfaces
     {
         void Add(routes rota);
         IEnumerable<routes> GetAll(DateTime? data);
+        void DeletarRota(string codigoRota);
     }
 }

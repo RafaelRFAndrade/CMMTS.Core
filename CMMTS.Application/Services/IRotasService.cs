@@ -8,5 +8,6 @@ namespace CMMTS.Application.Services
     {
         IEnumerable<routes> BuscarRotas(DateTime? data);
         CodResponse AdicionarRota(CadastrarRotaRequest cadastrarRota);
+        ResponseBase DeletarRota(string codigoRota);
     }
 }

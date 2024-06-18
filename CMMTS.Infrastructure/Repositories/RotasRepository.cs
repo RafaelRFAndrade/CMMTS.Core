@@ -27,5 +27,12 @@ namespace CMMTS.Infrastructure.Repositories
 
             return ExecuteQueryList<routes>(sql);
         }
+
+        public void DeletarRota(string codigoRota)
+        {
+            string sql = @$"DELETE FROM routes WHERE Codigo = '{codigoRota}'";
+
+            ExecuteQueryAsync(sql).Wait();
+        }
     }
 }
