@@ -98,11 +98,11 @@ namespace CMMTS.Web.Controllers
         }
         
         [HttpPost("FinalizarEntrega")]
-        public IActionResult FinalizarEntrega(string codigoWaypoint)
+        public IActionResult FinalizarEntrega(CodigoRequest codigoRequest)
         {
             try
             {
-                var response = _waypointService.FinalizarEntrega(codigoWaypoint);
+                var response = _waypointService.FinalizarEntrega(codigoRequest.Codigo);
 
                 return Ok(response);
             }
@@ -113,11 +113,11 @@ namespace CMMTS.Web.Controllers
         }
 
         [HttpDelete("DeletarRota")]
-        public IActionResult DeletarRota(string codigoRota)
+        public IActionResult DeletarRota(CodigoRequest codigoRequest)
         {
             try
             {
-                var response = _rotasService.DeletarRota(codigoRota);
+                var response = _rotasService.DeletarRota(codigoRequest.Codigo);
 
                 return Ok(response);
             }
