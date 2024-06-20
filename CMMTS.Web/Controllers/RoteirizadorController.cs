@@ -112,7 +112,7 @@ namespace CMMTS.Web.Controllers
             }
         }
 
-        [HttpDelete("DeletarRota")]
+        [HttpPost("DeletarRota")]
         public IActionResult DeletarRota(CodigoRequest codigoRequest)
         {
             try
