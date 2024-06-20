@@ -48,5 +48,10 @@ namespace CMMTS.Infrastructure.Repositories
 
             return ExecuteQuery<int?>(sql);
         }
+
+        public void AtualizarUsuario(Usuarios usuario)
+        {
+            UpdateAsync(usuario).Wait();
+        }
     }
 }

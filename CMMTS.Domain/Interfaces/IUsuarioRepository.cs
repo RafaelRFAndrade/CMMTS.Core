@@ -9,5 +9,6 @@ namespace CMMTS.Domain.Interfaces
         IEnumerable<Usuarios> GetAll();
         int? VerificarExistenciaUsuario(string nome, string email);
         void DeletarUsuarioPorNickname(string nickname);
+        void AtualizarUsuario(Usuarios usuario);
     }
 }

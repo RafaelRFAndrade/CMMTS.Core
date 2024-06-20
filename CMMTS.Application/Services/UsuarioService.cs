@@ -43,6 +43,16 @@ namespace CMMTS.Application.Services
             };
         }
 
+        public ResponseBase AtualizarUsuario(Usuarios usuario)
+        {
+            _usuarioRepository.AtualizarUsuario(usuario);
+
+            return new ResponseBase
+            {
+                Successo = true
+            };
+        }
+
         public ResponseBase CadastrarUsuario(CadastrarUsuarioRequest request)
         {
             ValidarCadastro(request);

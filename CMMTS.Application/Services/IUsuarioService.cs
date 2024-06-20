@@ -9,5 +9,6 @@ namespace CMMTS.Application.Services
         IEnumerable<Usuarios> BuscarUsuarios();
         ResponseBase LogarUsuario(UsuarioLoginRequest request);
         ResponseBase CadastrarUsuario(CadastrarUsuarioRequest request);
+        ResponseBase AtualizarUsuario(Usuarios usuario);
     }
 }

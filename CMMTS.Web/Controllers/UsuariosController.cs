@@ -1,6 +1,7 @@
 ﻿using CMMTS.Application.Services;
 using CMMTS.Application.Messaging.Requests;
 using Microsoft.AspNetCore.Mvc;
+using CMMTS.Domain.Entities;
 
 namespace CMMTS.Web.Controllers
 {
@@ -43,16 +44,31 @@ namespace CMMTS.Web.Controllers
             {
                 throw new Exception(ex.Message);
             }
-        }
+         }
 
         [HttpPost("Login")]
-        public IActionResult LogarUsuarios(UsuarioLoginRequest request)
+        public IActionResult AtualizarUsuario(UsuarioLoginRequest request)
         {
             try
             {
                 var login = _usuarioService.LogarUsuario(request);
 
                 return Ok(login);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPut("Usuario")]
+        public IActionResult LogarUsuarios(Usuarios usuario)
+        {
+            try
+            {
+                var response = _usuarioService.AtualizarUsuario(usuario);
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
